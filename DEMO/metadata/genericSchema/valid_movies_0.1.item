@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_tOWA0LGiEeuMPd4pQrzUjA" comment="connectionComment" label="connectionLabel" dataPackage="_tOWA0bGiEeuMPd4pQrzUjA" mappingTypeUsed="true" mappingTypeId="id_MSSQL"/>
+  <TalendMetadata:GenericPackage xmi:id="_tOWA0bGiEeuMPd4pQrzUjA" dataManager="_tOWA0LGiEeuMPd4pQrzUjA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_tOWA0rGiEeuMPd4pQrzUjA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_tOWA07GiEeuMPd4pQrzUjA" name="movieID" id="14" label="movieID" length="4" sourceType="INT" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_tOWA1LGiEeuMPd4pQrzUjA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_tOWA1bGiEeuMPd4pQrzUjA" name="title" id="15" label="title" length="29" sourceType="VARCHAR" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_tOWA1rGiEeuMPd4pQrzUjA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_tOWA17GiEeuMPd4pQrzUjA" name="directedBy" id="16" label="directedBy" length="20" precision="-1" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_tOWA2LGiEeuMPd4pQrzUjA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_tOWA2bGiEeuMPd4pQrzUjA" name="releaseYear" id="17" label="releaseYear" length="4" sourceType="INT" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_tOWA2rGiEeuMPd4pQrzUjA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_tOWA27GiEeuMPd4pQrzUjA" name="url" id="18" label="url" length="66" sourceType="VARCHAR" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_tOWA3LGiEeuMPd4pQrzUjA"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>
