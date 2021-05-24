@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_yWjEBrGSEeu6A5d6mBeBiA" id="_yWjEALGSEeu6A5d6mBeBiA" label="directors" version="0.1" statusCode="" item="_yWjECLGSEeu6A5d6mBeBiA" displayName="directors">
+    <author href="../../talend.project#_nxghUbF5Eeu1G7YYQp6lWA"/>
+    <additionalProperties xmi:id="_yWs1ALGSEeu6A5d6mBeBiA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_yWs1AbGSEeu6A5d6mBeBiA" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_yWs1ArGSEeu6A5d6mBeBiA" key="created_date" value="2021-05-10T15:22:36.752+0200"/>
+    <additionalProperties xmi:id="_yWs1A7GSEeu6A5d6mBeBiA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_yWs1BLGSEeu6A5d6mBeBiA" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_yWs1BbGSEeu6A5d6mBeBiA" key="modified_date" value="2021-05-17T17:05:23.319+0200"/>
+    <additionalProperties xmi:id="_fPoxYLcgEeuBO5GpsXfzUw" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_fPoxYbcgEeuBO5GpsXfzUw" key="import_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_fPoxYrcgEeuBO5GpsXfzUw" key="import_date" value="2021-05-17T16:59:32.606+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_yWjEB7GSEeu6A5d6mBeBiA" path="" locked="true" lockDate="2021-05-17T17:05:01.679+0200">
+    <locker href="../../talend.project#_nxghUbF5Eeu1G7YYQp6lWA"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:DelimitedFileConnectionItem xmi:id="_yWjECLGSEeu6A5d6mBeBiA" property="_yWjEBrGSEeu6A5d6mBeBiA" state="_yWjEB7GSEeu6A5d6mBeBiA">
+    <connection href="directors_0.1.item#_yWjEAbGSEeu6A5d6mBeBiA"/>
+  </TalendProperties:DelimitedFileConnectionItem>
+</xmi:XMI>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_ij4ikbffEeupEfKNrt1hXA" id="_ij4ikLffEeupEfKNrt1hXA" label="gerarchie" version="0.1" statusCode="" item="_ij4ik7ffEeupEfKNrt1hXA" displayName="gerarchie">
+    <author href="../talend.project#_nxghUbF5Eeu1G7YYQp6lWA"/>
+    <additionalProperties xmi:id="_ij4ilLffEeupEfKNrt1hXA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_ij4ilbffEeupEfKNrt1hXA" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_ij4ilrffEeupEfKNrt1hXA" key="created_date" value="2021-05-18T15:47:08.985+0200"/>
+    <additionalProperties xmi:id="_ij4il7ffEeupEfKNrt1hXA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_ij4imLffEeupEfKNrt1hXA" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_ij4imbffEeupEfKNrt1hXA" key="modified_date" value="2021-05-18T17:38:09.277+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_ij4ikrffEeupEfKNrt1hXA" path="" locked="true" lockDate="2021-05-18T17:31:50.213+0200">
+    <locker href="../talend.project#_nxghUbF5Eeu1G7YYQp6lWA"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:ProcessItem xmi:id="_ij4ik7ffEeupEfKNrt1hXA" property="_ij4ikbffEeupEfKNrt1hXA" state="_ij4ikrffEeupEfKNrt1hXA">
+    <process href="gerarchie_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_Aca_87fdEeupEfKNrt1hXA" id="_ykVOwLfcEeupEfKNrt1hXA" label="AdventureWork" version="0.1" statusCode="" item="_Aca_9bfdEeupEfKNrt1hXA" displayName="AdventureWork">
+    <author href="../../talend.project#_nxghUbF5Eeu1G7YYQp6lWA"/>
+    <additionalProperties xmi:id="_AckJ4LfdEeupEfKNrt1hXA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_AckJ4bfdEeupEfKNrt1hXA" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_AckJ4rfdEeupEfKNrt1hXA" key="created_date" value="2021-05-18T15:29:01.054+0200"/>
+    <additionalProperties xmi:id="_AckJ47fdEeupEfKNrt1hXA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_AckJ5LfdEeupEfKNrt1hXA" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_AckJ5bfdEeupEfKNrt1hXA" key="modified_date" value="2021-05-18T15:29:01.211+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_Aca_9LfdEeupEfKNrt1hXA" path=""/>
+  <TalendProperties:DatabaseConnectionItem xmi:id="_Aca_9bfdEeupEfKNrt1hXA" property="_Aca_87fdEeupEfKNrt1hXA" state="_Aca_9LfdEeupEfKNrt1hXA" typeName="Microsoft SQL Server">
+    <connection href="AdventureWork_0.1.item#_Aca_8LfdEeupEfKNrt1hXA"/>
+  </TalendProperties:DatabaseConnectionItem>
+</xmi:XMI>

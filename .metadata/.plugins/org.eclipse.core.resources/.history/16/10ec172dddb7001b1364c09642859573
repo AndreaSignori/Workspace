@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_Aca_8LfdEeupEfKNrt1hXA" name="AdventureWork" id="_ykVOwLfcEeupEfKNrt1hXA" label="AdventureWork" dataPackage="_AeD-sLfdEeupEfKNrt1hXA" DatabaseType="Microsoft SQL Server" DriverClass="net.sourceforge.jtds.jdbc.Driver" URL="jdbc:jtds:sqlserver://localhost:1433/AdventureWorks2019;" dbVersionString="JTDS" Port="1433" Username="talend" Password="enc:system.encryption.key.v1:KADDREti36e1Sn6GZkteFcq/mfsQAd/QYodTPbBzC8ySGdZQKbG8mzjjtYeD0w==" ServerName="localhost" DatasourceName="" FileFieldName="" SID="AdventureWorks2019" SqlSynthax="" StringQuote="" NullChar="" DbmsId="id_MSSQL" ProductId="SQL_SERVER" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="">
+    <taggedValue xmi:id="_Aca_8bfdEeupEfKNrt1hXA" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_Act64LfdEeupEfKNrt1hXA" tag="package filter" value=""/>
+    <taggedValue xmi:id="_Ac3r4LfdEeupEfKNrt1hXA" tag="Status" value=""/>
+    <taggedValue xmi:id="_Ac3r4bfdEeupEfKNrt1hXA" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_Ac3r4rfdEeupEfKNrt1hXA" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_Ac3r47fdEeupEfKNrt1hXA" tag="Description" value=""/>
+    <taggedValue xmi:id="_Ac3r5LfdEeupEfKNrt1hXA" tag="Author" value=""/>
+    <taggedValue xmi:id="_Ac3r5bfdEeupEfKNrt1hXA" tag="otherParameter"/>
+    <taggedValue xmi:id="_AdKm0LfdEeupEfKNrt1hXA" tag="DB ProductName" value="Microsoft SQL Server"/>
+    <taggedValue xmi:id="_AdKm0bfdEeupEfKNrt1hXA" tag="DB ProductVersion" value="15.00.4123"/>
+    <taggedValue xmi:id="_AdKm0rfdEeupEfKNrt1hXA" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_Aca_8rfdEeupEfKNrt1hXA" key="CONN_PARA_KEY_USERNAME" value="talend"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_AeD-sLfdEeupEfKNrt1hXA" name="AdventureWorks2019" dataManager="_Aca_8LfdEeupEfKNrt1hXA">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-sbfdEeupEfKNrt1hXA" name="db_accessadmin"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-srfdEeupEfKNrt1hXA" name="db_backupoperator"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-s7fdEeupEfKNrt1hXA" name="db_datareader"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-tLfdEeupEfKNrt1hXA" name="db_datawriter"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-tbfdEeupEfKNrt1hXA" name="db_ddladmin"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-trfdEeupEfKNrt1hXA" name="db_denydatareader"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-t7fdEeupEfKNrt1hXA" name="db_denydatawriter"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-uLfdEeupEfKNrt1hXA" name="db_owner"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-ubfdEeupEfKNrt1hXA" name="db_securityadmin"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-urfdEeupEfKNrt1hXA" name="dbo"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-u7fdEeupEfKNrt1hXA" name="guest"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-vLfdEeupEfKNrt1hXA" name="HumanResources"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-vbfdEeupEfKNrt1hXA" name="INFORMATION_SCHEMA"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-vrfdEeupEfKNrt1hXA" name="Person"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-v7fdEeupEfKNrt1hXA" name="Production"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-wLfdEeupEfKNrt1hXA" name="Purchasing"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-wbfdEeupEfKNrt1hXA" name="Sales"/>
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_AeD-wrfdEeupEfKNrt1hXA" name="sys"/>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>

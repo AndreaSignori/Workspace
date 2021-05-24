@@ -291,6 +291,16 @@ public class filter_movies implements TalendJob {
 		tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tLogRow_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tDBOutput_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -336,6 +346,195 @@ public class filter_movies implements TalendJob {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
 				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+		final static byte[] commonByteArrayLock_DEMO_filter_movies = new byte[0];
+		static byte[] commonByteArray_DEMO_filter_movies = new byte[0];
+
+		public Integer movieID;
+
+		public Integer getMovieID() {
+			return this.movieID;
+		}
+
+		public String title;
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public Integer releaseYear;
+
+		public Integer getReleaseYear() {
+			return this.releaseYear;
+		}
+
+		public String url;
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public String directorName;
+
+		public String getDirectorName() {
+			return this.directorName;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_DEMO_filter_movies.length) {
+					if (length < 1024 && commonByteArray_DEMO_filter_movies.length == 0) {
+						commonByteArray_DEMO_filter_movies = new byte[1024];
+					} else {
+						commonByteArray_DEMO_filter_movies = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_DEMO_filter_movies, 0, length);
+				strReturn = new String(commonByteArray_DEMO_filter_movies, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_DEMO_filter_movies) {
+
+				try {
+
+					int length = 0;
+
+					this.movieID = readInteger(dis);
+
+					this.title = readString(dis);
+
+					this.releaseYear = readInteger(dis);
+
+					this.url = readString(dis);
+
+					this.directorName = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.movieID, dos);
+
+				// String
+
+				writeString(this.title, dos);
+
+				// Integer
+
+				writeInteger(this.releaseYear, dos);
+
+				// String
+
+				writeString(this.url, dos);
+
+				// String
+
+				writeString(this.directorName, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("movieID=" + String.valueOf(movieID));
+			sb.append(",title=" + title);
+			sb.append(",releaseYear=" + String.valueOf(releaseYear));
+			sb.append(",url=" + url);
+			sb.append(",directorName=" + directorName);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row3Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
 
 	}
 
@@ -1119,6 +1318,7 @@ public class filter_movies implements TalendJob {
 
 				row1Struct row1 = new row1Struct();
 				valid_moviesStruct valid_movies = new valid_moviesStruct();
+				valid_moviesStruct row3 = valid_movies;
 				invalid_moviesStruct invalid_movies = new invalid_moviesStruct();
 
 				/**
@@ -1131,7 +1331,7 @@ public class filter_movies implements TalendJob {
 				currentComponent = "tDBOutput_1";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "valid_movies");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
 				}
 
 				int tos_count_tDBOutput_1 = 0;
@@ -1180,7 +1380,7 @@ public class filter_movies implements TalendJob {
 				dbUser_tDBOutput_1 = "talend";
 
 				final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil.decryptPassword(
-						"enc:routine.encryption.key.v1:w/XgtBdiAUlk03fsbN/WP0PzKbAU0VG6AewCM5XhxzA+BvZHrYJQsKZ7PNVFKA==");
+						"enc:routine.encryption.key.v1:y23ykB+rXtQi18ZV+ensy5BW0KOCryyn5cLPunPL06twG7G/9mJ+n3+O+alUXg==");
 
 				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
 				conn_tDBOutput_1 = java.sql.DriverManager.getConnection(url_tDBOutput_1, dbUser_tDBOutput_1,
@@ -1227,6 +1427,34 @@ public class filter_movies implements TalendJob {
 
 				/**
 				 * [tDBOutput_1 begin ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_1", false);
+				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "valid_movies");
+				}
+
+				int tos_count_tLogRow_1 = 0;
+
+				///////////////////////
+
+				final String OUTPUT_FIELD_SEPARATOR_tLogRow_1 = "|";
+				java.io.PrintStream consoleOut_tLogRow_1 = null;
+
+				StringBuilder strBuffer_tLogRow_1 = null;
+				int nb_line_tLogRow_1 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_1 begin ] stop
 				 */
 
 				/**
@@ -1288,7 +1516,7 @@ public class filter_movies implements TalendJob {
 				dbUser_tDBOutput_2 = "talend";
 
 				final String decryptedPassword_tDBOutput_2 = routines.system.PasswordEncryptUtil.decryptPassword(
-						"enc:routine.encryption.key.v1:O5TyHupRUHn1AjNeE1MoVTA9VaZxNpwJ4i/YD3lW84OrvxOnfdPtLMbscQqhcA==");
+						"enc:routine.encryption.key.v1:0m05X5iVYROLAS7F+vbiH2Bi18TeYWZF9I26hBxQSrW2USZSbpTASDp1NIXO5w==");
 
 				String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
 				conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2, dbUser_tDBOutput_2,
@@ -1404,7 +1632,7 @@ public class filter_movies implements TalendJob {
 				String dbUser_tDBInput_2 = "talend";
 
 				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil.decryptPassword(
-						"enc:routine.encryption.key.v1:sIu8UiEJSQrn2BT/5Brw+4EIh7WJAw4gLAfW+CmNWlAkOgxNwLgC1aqCgnpEcA==");
+						"enc:routine.encryption.key.v1:cMiMN2abxOqLsxjLaSDgoHofS7GJWYhUUxXcO2m7LZ8V6VWNsNxQyXUFPl7DHw==");
 
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
 
@@ -1656,44 +1884,130 @@ public class filter_movies implements TalendJob {
 							if (valid_movies != null) {
 
 								/**
+								 * [tLogRow_1 main ] start
+								 */
+
+								currentComponent = "tLogRow_1";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "valid_movies");
+								}
+
+///////////////////////		
+
+								strBuffer_tLogRow_1 = new StringBuilder();
+
+								if (valid_movies.movieID != null) { //
+
+									strBuffer_tLogRow_1.append(String.valueOf(valid_movies.movieID));
+
+								} //
+
+								strBuffer_tLogRow_1.append("|");
+
+								if (valid_movies.title != null) { //
+
+									strBuffer_tLogRow_1.append(String.valueOf(valid_movies.title));
+
+								} //
+
+								strBuffer_tLogRow_1.append("|");
+
+								if (valid_movies.releaseYear != null) { //
+
+									strBuffer_tLogRow_1.append(String.valueOf(valid_movies.releaseYear));
+
+								} //
+
+								strBuffer_tLogRow_1.append("|");
+
+								if (valid_movies.url != null) { //
+
+									strBuffer_tLogRow_1.append(String.valueOf(valid_movies.url));
+
+								} //
+
+								strBuffer_tLogRow_1.append("|");
+
+								if (valid_movies.directorName != null) { //
+
+									strBuffer_tLogRow_1.append(String.valueOf(valid_movies.directorName));
+
+								} //
+
+								if (globalMap.get("tLogRow_CONSOLE") != null) {
+									consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+								} else {
+									consoleOut_tLogRow_1 = new java.io.PrintStream(
+											new java.io.BufferedOutputStream(System.out));
+									globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
+								}
+								consoleOut_tLogRow_1.println(strBuffer_tLogRow_1.toString());
+								consoleOut_tLogRow_1.flush();
+								nb_line_tLogRow_1++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+								row3 = valid_movies;
+
+								tos_count_tLogRow_1++;
+
+								/**
+								 * [tLogRow_1 main ] stop
+								 */
+
+								/**
+								 * [tLogRow_1 process_data_begin ] start
+								 */
+
+								currentComponent = "tLogRow_1";
+
+								/**
+								 * [tLogRow_1 process_data_begin ] stop
+								 */
+
+								/**
 								 * [tDBOutput_1 main ] start
 								 */
 
 								currentComponent = "tDBOutput_1";
 
 								if (execStat) {
-									runStat.updateStatOnConnection(iterateId, 1, 1, "valid_movies");
+									runStat.updateStatOnConnection(iterateId, 1, 1, "row3");
 								}
 
 								whetherReject_tDBOutput_1 = false;
-								if (valid_movies.movieID == null) {
+								if (row3.movieID == null) {
 									pstmt_tDBOutput_1.setNull(1, java.sql.Types.INTEGER);
 								} else {
-									pstmt_tDBOutput_1.setInt(1, valid_movies.movieID);
+									pstmt_tDBOutput_1.setInt(1, row3.movieID);
 								}
 
-								if (valid_movies.title == null) {
+								if (row3.title == null) {
 									pstmt_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
 								} else {
-									pstmt_tDBOutput_1.setString(2, valid_movies.title);
+									pstmt_tDBOutput_1.setString(2, row3.title);
 								}
 
-								if (valid_movies.releaseYear == null) {
+								if (row3.releaseYear == null) {
 									pstmt_tDBOutput_1.setNull(3, java.sql.Types.INTEGER);
 								} else {
-									pstmt_tDBOutput_1.setInt(3, valid_movies.releaseYear);
+									pstmt_tDBOutput_1.setInt(3, row3.releaseYear);
 								}
 
-								if (valid_movies.url == null) {
+								if (row3.url == null) {
 									pstmt_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
 								} else {
-									pstmt_tDBOutput_1.setString(4, valid_movies.url);
+									pstmt_tDBOutput_1.setString(4, row3.url);
 								}
 
-								if (valid_movies.directorName == null) {
+								if (row3.directorName == null) {
 									pstmt_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
 								} else {
-									pstmt_tDBOutput_1.setString(5, valid_movies.directorName);
+									pstmt_tDBOutput_1.setString(5, row3.directorName);
 								}
 
 								pstmt_tDBOutput_1.addBatch();
@@ -1800,6 +2114,16 @@ public class filter_movies implements TalendJob {
 
 								/**
 								 * [tDBOutput_1 process_data_end ] stop
+								 */
+
+								/**
+								 * [tLogRow_1 process_data_end ] start
+								 */
+
+								currentComponent = "tLogRow_1";
+
+								/**
+								 * [tLogRow_1 process_data_end ] stop
 								 */
 
 							} // End of branch "valid_movies"
@@ -2040,6 +2364,29 @@ public class filter_movies implements TalendJob {
 				 */
 
 				/**
+				 * [tLogRow_1 end ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+//////
+//////
+				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "valid_movies");
+				}
+
+				ok_Hash.put("tLogRow_1", true);
+				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_1 end ] stop
+				 */
+
+				/**
 				 * [tDBOutput_1 end ] start
 				 */
 
@@ -2096,7 +2443,7 @@ public class filter_movies implements TalendJob {
 				globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "valid_movies");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
 				}
 
 				ok_Hash.put("tDBOutput_1", true);
@@ -2210,6 +2557,16 @@ public class filter_movies implements TalendJob {
 
 				/**
 				 * [tMap_1 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 finally ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+				/**
+				 * [tLogRow_1 finally ] stop
 				 */
 
 				/**
@@ -2596,7 +2953,7 @@ public class filter_movies implements TalendJob {
 				String dbUser_tDBInput_1 = "talend";
 
 				final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil.decryptPassword(
-						"enc:routine.encryption.key.v1:pMI99GsciMuxIeFyXCUQeOmNRI5eNWU8vTKCiNr69McTm1CJtLXXjKcWhcEddw==");
+						"enc:routine.encryption.key.v1:BviOnxVxXckQkMFOhqHSARYiCrWqKsEK3Emy7DR4MlcykpWbDHSbJv9hXLmr6Q==");
 
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
 
@@ -3207,6 +3564,6 @@ public class filter_movies implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 99057 characters generated by Talend Open Studio for Data Integration on the
- * May 21, 2021 at 12:43:49 PM CEST
+ * 108208 characters generated by Talend Open Studio for Data Integration on the
+ * May 24, 2021 at 9:53:09 AM CEST
  ************************************************************************************************/

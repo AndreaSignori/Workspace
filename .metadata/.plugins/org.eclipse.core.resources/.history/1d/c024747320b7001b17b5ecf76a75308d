@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_tOWA3bGiEeuMPd4pQrzUjA" id="_tOMP0LGiEeuMPd4pQrzUjA" label="valid_movies" purpose="Valid movies table informtion" description="Schema for valid_movies" version="0.1" statusCode="" item="_tOWA37GiEeuMPd4pQrzUjA" displayName="valid_movies">
+    <author href="../../talend.project#_nxghUbF5Eeu1G7YYQp6lWA"/>
+    <additionalProperties xmi:id="_tOWA4LGiEeuMPd4pQrzUjA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_tOWA4bGiEeuMPd4pQrzUjA" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_tOWA4rGiEeuMPd4pQrzUjA" key="created_date" value="2021-05-10T17:16:34.269+0200"/>
+    <additionalProperties xmi:id="_tOWA47GiEeuMPd4pQrzUjA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_tOWA5LGiEeuMPd4pQrzUjA" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_tOWA5bGiEeuMPd4pQrzUjA" key="modified_date" value="2021-05-10T17:36:55.782+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_tOWA3rGiEeuMPd4pQrzUjA" path="" deleted="true"/>
+  <TalendProperties:GenericSchemaConnectionItem xmi:id="_tOWA37GiEeuMPd4pQrzUjA" property="_tOWA3bGiEeuMPd4pQrzUjA" state="_tOWA3rGiEeuMPd4pQrzUjA">
+    <connection href="valid_movies_0.1.item#_tOWA0LGiEeuMPd4pQrzUjA"/>
+  </TalendProperties:GenericSchemaConnectionItem>
+</xmi:XMI>

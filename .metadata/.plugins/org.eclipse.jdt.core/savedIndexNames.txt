@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Program Files (x86)\Talend\TOS_DI-Win32-20200219_1130-V7.3.1\workspace\.metadata\.plugins\org.eclipse.jdt.core
+2480423982.index
+2031223865.index
+1991655398.index
+9825631.index

@@ -1,0 +1,13 @@
+CLOSE_EDITORS_ON_EXIT=true
+LICENSE_VALIDATION_DONE=1
+LOGINCOUNT=8
+NOT_SHOW_ONBOARDING_AT_STARTUP=true
+PREFERENCE_TALEND_LOGON_STARTUP_TIMES=10
+active_data_collector=true
+eclipse.preferences.version=1
+lastUSedProject=DEMO
+last_started_project_type=NO_TYPE
+logonDialog.alwaysAskMeAtStartUp=true
+showIntro=false
+user@talend.com=notused\:asignori\:61751321e4cc9610902351ced642134a9ae0d0a8
+workspaceTasksDone=org.talend.core.InitConnectionsMigrationTask|org.talend.core.EmptyConnectionsMigrationTask|org.talend.designer.core.ui.preferences.migration.AddQuotesForStatLogsPreference|org.talend.designer.runprocess.migrationtask.changeClasspath|org.talend.designer.runprocess.maven.ChangeCodeProjectClasspathMigrationTask2|org.talend.migrationTool.InitWorkspaceMigrationTask|org.talend.repository.model.migration.ChangeProjectTechinicalName
